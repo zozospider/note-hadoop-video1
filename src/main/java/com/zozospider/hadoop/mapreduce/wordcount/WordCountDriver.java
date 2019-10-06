@@ -27,8 +27,9 @@ public class WordCountDriver {
      * please google
      * enough book love me
      * endspiderxmac:input zoz$
-     *
-     * spiderxmac:output zoz$ ls -l /Users/zoz/zz/other/tmp/mapReduce/output/
+     * <p>
+     * spiderxmac:output zoz$ ls -l /Users/zoz/zz/other/tmp/mapReduce/output/wordCount/
+     * ls: /Users/zoz/zz/other/tmp/mapReduce/output/wordCount/: No such file or directory
      * spiderxmac:output zoz$
      */
 
@@ -64,9 +65,6 @@ public class WordCountDriver {
 
 
     /**
-     * spiderxmac:output zoz$ ls -l /Users/zoz/zz/other/tmp/mapReduce/output/
-     * total 0
-     * drwxr-xr-x  6 zoz  staff  192 10  6 15:18 wordCount
      * spiderxmac:output zoz$ ls -l /Users/zoz/zz/other/tmp/mapReduce/output/wordCount/
      * total 8
      * -rw-r--r--  1 zoz  staff   0 10  6 15:18 _SUCCESS

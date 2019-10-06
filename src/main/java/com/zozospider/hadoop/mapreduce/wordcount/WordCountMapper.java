@@ -23,8 +23,8 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        // key: 0
-        // value: abc abc love
+        // key_in: 0
+        // value_in: abc abc love
 
         // 1 获取一行
         String line = value.toString();
@@ -36,6 +36,9 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
         for (String word : words) {
 
             keyOut.set(word);
+
+            // key_out: abc
+            // value_out: 1
 
             // Map 写出
             context.write(keyOut, valueOut);
