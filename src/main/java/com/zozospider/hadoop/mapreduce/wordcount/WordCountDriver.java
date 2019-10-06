@@ -35,7 +35,8 @@ public class WordCountDriver {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 
-        args = new String[]{"/Users/zoz/zz/other/tmp/input/wordCount", "/Users/zoz/zz/other/tmp/output/wordCount"};
+        // 本地运行时不要注释下面 1 行
+        // args = new String[]{"/Users/zoz/zz/other/tmp/input/wordCount", "/Users/zoz/zz/other/tmp/output/wordCount"};
 
         // 1 获取 Job 对象
         Configuration conf = new Configuration();
