@@ -42,6 +42,10 @@ public class WordCountDriverForCombineTextInputFormat2 {
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf);
 
+        // 设置 Map 输入类型为: CombineTextInputFormat, 且设置 maxInputSplitSize 为: 4 M
+        job.setInputFormatClass(CombineTextInputFormat.class);
+        CombineTextInputFormat.setMaxInputSplitSize(job, 4194304);
+
         // 2 设置 Jar, Mapper, Reducer 类
         job.setJarByClass(WordCountDriverForCombineTextInputFormat2.class);
         job.setMapperClass(WordCountMapper.class);
@@ -52,10 +56,6 @@ public class WordCountDriverForCombineTextInputFormat2 {
         job.setMapOutputValueClass(IntWritable.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
-
-        // 设置 Map 输入类型, 且设置 maxInputSplitSize 为 4 M
-        job.setInputFormatClass(CombineTextInputFormat.class);
-        CombineTextInputFormat.setMaxInputSplitSize(job, 4194304);
 
         // 4 设置输入输出路径
         FileInputFormat.setInputPaths(job, new Path(args[0]));
