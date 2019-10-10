@@ -1,4 +1,4 @@
-package com.zozospider.hadoop.mapreduce.input.combinetextinputformat;
+package com.zozospider.hadoop.mapreduce.input.combinetext;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Map 阶段
  */
-public class CombineTextInputFormatMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class CombineTextMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 
     // key out
     private Text keyOut = new Text();

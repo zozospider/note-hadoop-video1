@@ -1,4 +1,4 @@
-package com.zozospider.hadoop.mapreduce.input.keyvaluetextinputformat;
+package com.zozospider.hadoop.mapreduce.input.nline;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -7,9 +7,9 @@ import org.apache.hadoop.mapreduce.Reducer;
 import java.io.IOException;
 
 /**
- * Map 阶段
+ * Reduce 阶段
  */
-public class KeyValueTextInputFormatReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+public class NLineReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 
     IntWritable valueOut = new IntWritable();
 

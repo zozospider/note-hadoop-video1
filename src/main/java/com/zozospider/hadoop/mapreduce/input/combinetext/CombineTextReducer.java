@@ -1,4 +1,4 @@
-package com.zozospider.hadoop.mapreduce.input.nlineinputformat;
+package com.zozospider.hadoop.mapreduce.input.combinetext;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * Reduce 阶段
  */
-public class NLineInputFormatReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+public class CombineTextReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 
     IntWritable valueOut = new IntWritable();
 

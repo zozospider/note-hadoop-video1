@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * 实现 Writable 接口
  */
-public class FlowValueWritable implements Writable {
+public class FlowCountValueWritable implements Writable {
 
     // 上行流量
     private long upFlow;
@@ -21,7 +21,7 @@ public class FlowValueWritable implements Writable {
     /**
      * 空构造方法, 必须实现
      */
-    public FlowValueWritable() {
+    public FlowCountValueWritable() {
         super();
     }
 
@@ -50,7 +50,7 @@ public class FlowValueWritable implements Writable {
      */
     @Override
     public String toString() {
-        return "FlowValueWritable{" +
+        return "FlowCountValueWritable{" +
                 "upFlow=" + upFlow +
                 ", downFlow=" + downFlow +
                 ", sumFlow=" + sumFlow +
@@ -99,7 +99,7 @@ public class FlowValueWritable implements Writable {
      * @return 比较结果
      */
     /*@Override
-    public int compareTo(FlowValueWritable o) {
+    public int compareTo(FlowCountValueWritable o) {
         return this.sumFlow > o.getSumFlow() ? -1 : 1;
     }*/
 

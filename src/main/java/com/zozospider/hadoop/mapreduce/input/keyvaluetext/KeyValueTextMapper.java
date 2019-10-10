@@ -1,4 +1,4 @@
-package com.zozospider.hadoop.mapreduce.input.keyvaluetextinputformat;
+package com.zozospider.hadoop.mapreduce.input.keyvaluetext;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * Map 阶段
  */
-public class KeyValueTextInputFormatMapper extends Mapper<Text, Text, Text, IntWritable> {
+public class KeyValueTextMapper extends Mapper<Text, Text, Text, IntWritable> {
 
     // value out
     private static final IntWritable valueOut = new IntWritable(1);

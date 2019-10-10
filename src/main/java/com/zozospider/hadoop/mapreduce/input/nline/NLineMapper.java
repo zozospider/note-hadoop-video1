@@ -1,4 +1,4 @@
-package com.zozospider.hadoop.mapreduce.input.nlineinputformat;
+package com.zozospider.hadoop.mapreduce.input.nline;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Map 阶段
  */
-public class NLineInputFormatMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class NLineMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 
     // key out
     private Text keyOut = new Text();

@@ -9,10 +9,10 @@ import java.io.IOException;
 /**
  * Map 阶段
  */
-public class FlowCountMapper extends Mapper<LongWritable, Text, Text, FlowValueWritable> {
+public class FlowCountMapper extends Mapper<LongWritable, Text, Text, FlowCountValueWritable> {
 
     Text keyOut = new Text();
-    FlowValueWritable valueOut = new FlowValueWritable();
+    FlowCountValueWritable valueOut = new FlowCountValueWritable();
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
@@ -28,7 +28,7 @@ public class FlowCountMapper extends Mapper<LongWritable, Text, Text, FlowValueW
         valueOut.set(Long.parseLong(fields[fields.length - 3]), Long.parseLong(fields[fields.length - 2]));
 
         // key_out: 13366999900
-        // value_out: FlowValueWritable{upFlow=5636, downFlow=7788, sumFlow=13424}
+        // value_out: FlowCountValueWritable{upFlow=5636, downFlow=7788, sumFlow=13424}
 
         // 4 Map 写出
         context.write(keyOut, valueOut);
