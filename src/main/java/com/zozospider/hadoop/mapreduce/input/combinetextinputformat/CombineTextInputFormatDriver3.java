@@ -13,6 +13,7 @@ import java.io.IOException;
 
 /**
  * MapReduce 驱动
+ * 参考: [Hadoop CombineTextInputFormat 切片机制](https://blog.csdn.net/yljphp/article/details/89070948)
  */
 public class CombineTextInputFormatDriver3 {
 
