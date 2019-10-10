@@ -1,4 +1,4 @@
-package com.zozospider.hadoop.mapreduce.wordcount;
+package com.zozospider.hadoop.mapreduce.input.nlineinputformat;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -10,11 +10,7 @@ import java.io.IOException;
 /**
  * Map 阶段
  */
-// KEYIN: 输入数据的 key
-// VALUEIN: 输入数据的 value
-// KEYOUT: 输出数据的 key
-// VALUEOUT: 输出数据的 value
-public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class NLineInputFormatMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 
     // key out
     private Text keyOut = new Text();
