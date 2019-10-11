@@ -11,7 +11,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import java.io.IOException;
 
 /**
- * MapReduce 驱动
+ * MapReduce 驱动: 统计单次出现次数
  */
 public class WordCountDriver {
 
