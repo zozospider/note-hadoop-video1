@@ -17,18 +17,19 @@ public class GroupingComparatorReducer extends Reducer<GroupingComparatorKeyWrit
         // key_in: GroupingComparatorKeyWritable{field1=1, field2=300}
         // value_in: [one., one.., one]
 
-        // 循环拼装 value
-        StringBuffer valueBuffer = new StringBuffer();
-        valueBuffer.append("values: ");
+        // 如果迭代 values, 会每次更新对应的 key 值 (参考 java.lang.Iterable 的实现: org.apache.hadoop.mapreduce.task.ReduceContextImpl.ValueIterable)
+        /*System.out.println("key0: " + key);
 
         for (Text value : values) {
-            valueBuffer.append(value.toString() + " ");
-        }
+            System.out.println("key: " + key + ", value: " + value);
+            context.write(key, value);
+        }*/
 
-        valueOut.set(valueBuffer.toString());
+
+        valueOut.set(values.iterator().next());
 
         // keyOut: GroupingComparatorKeyWritable{field1=1, field2=300}
-        // valueOut: values: one. one.. one
+        // valueOut: values: one.
 
         // 写出
         context.write(key, valueOut);

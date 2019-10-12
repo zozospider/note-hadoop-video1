@@ -15,10 +15,10 @@ import java.io.IOException;
 public class GroupingComparatorDriver {
 
     /**
-     * ➜  input ll /Users/user/other/tmp/MapReduce/input/GroupingComparator/
+     * spiderxmac:input zoz$ ls -l /Users/zoz/zz/other/tmp/MapReduce/input/GroupingComparator/
      * total 8
-     * -rw-r--r--  1 user  staff   159B 10 12 20:59 f1
-     * ➜  input cat GroupingComparator/f1
+     * -rw-r--r--  1 zoz  staff  159 10 12 22:55 f1
+     * spiderxmac:input zoz$ cat GroupingComparator/f1
      * one 1 100
      * two 2 500
      * five 5 500
@@ -33,25 +33,25 @@ public class GroupingComparatorDriver {
      * nine. 9 300
      * eight 8 100
      * nine.. 9 900
-     * ➜  input
+     * spiderxmac:input zoz$
      * <p>
-     * ➜  output ll /Users/user/other/tmp/MapReduce/output/GroupingComparator/
-     * ls: /Users/user/other/tmp/MapReduce/output/GroupingComparator/: No such file or directory
-     * ➜  output
+     * spiderxmac:output zoz$ ls -l /Users/zoz/zz/other/tmp/MapReduce/output/GroupingComparator/
+     * ls: /Users/zoz/zz/other/tmp/MapReduce/output/GroupingComparator/: No such file or directory
+     * spiderxmac:output zoz$
      */
 
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 
         // 本地运行时不要注释下面 1 行
-        args = new String[]{"/Users/user/other/tmp/MapReduce/input/GroupingComparator", "/Users/user/other/tmp/MapReduce/output/GroupingComparator"};
+        args = new String[]{"/Users/zoz/zz/other/tmp/MapReduce/input/GroupingComparator", "/Users/zoz/zz/other/tmp/MapReduce/output/GroupingComparator"};
 
         // 1 获取 Job 对象
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf);
 
-        // 设置 GroupingComparator 为 GroupingComparatorKeyComprator
-        job.setGroupingComparatorClass(GroupingComparatorKeyComprator.class);
+        // 设置 GroupingComparator 为 GroupingComparatorKeyComparator
+        job.setGroupingComparatorClass(GroupingComparatorKeyComparator.class);
 
         // 2 设置 Jar, Mapper, Reducer 类
         job.setJarByClass(GroupingComparatorDriver.class);

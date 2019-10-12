@@ -48,8 +48,8 @@ public class GroupingComparatorKeyWritable implements WritableComparable<Groupin
             return -1;
         } else {
 
-            /*
             // 与下面等价
+            /*
             if (field2 > o.getField2()) {
                 return -1;
             } else if (field2 < o.getField2()) {
@@ -58,7 +58,7 @@ public class GroupingComparatorKeyWritable implements WritableComparable<Groupin
                 return 0;
             }
             */
-            return - Integer.compare(field2, o.getField2());
+            return Integer.compare(o.getField2(), field2);
         }
     }
 
@@ -77,4 +77,5 @@ public class GroupingComparatorKeyWritable implements WritableComparable<Groupin
     public void setField2(int field2) {
         this.field2 = field2;
     }
+
 }
