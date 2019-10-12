@@ -10,7 +10,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import java.io.IOException;
 
 /**
- * MapReduce 驱动: 全排序 (按 (field2 + field3) 倒叙排列)
+ * MapReduce 驱动: 全排序 (按 (field1 + field2) 倒叙排列)
  */
 public class AllDriver {
 

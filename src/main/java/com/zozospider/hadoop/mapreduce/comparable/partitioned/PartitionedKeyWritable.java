@@ -36,7 +36,8 @@ public class PartitionedKeyWritable implements WritableComparable<PartitionedKey
 
     @Override
     public int compareTo(PartitionedKeyWritable o) {
-        // 按 fieldSum 倒叙排列
+        // 按 fieldSum 降叙排列
+
         if (fieldSum > o.getFieldSum()) {
             return -1;
         } else if (fieldSum < o.getFieldSum()) {
