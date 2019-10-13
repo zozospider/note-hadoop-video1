@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * Reduce 阶段
  */
-public class GroupingComparatorReducer extends Reducer<GroupingComparatorKeyWritable, Text, GroupingComparatorKeyWritable, Text> {
+public class GroupingComparatorReducer1 extends Reducer<GroupingComparatorKeyWritable, Text, GroupingComparatorKeyWritable, Text> {
 
     Text valueOut = new Text();
 
