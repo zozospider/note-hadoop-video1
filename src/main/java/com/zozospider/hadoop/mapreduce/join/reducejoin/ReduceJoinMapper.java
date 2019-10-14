@@ -1,4 +1,4 @@
-package com.zozospider.hadoop.mapreduce.join.mapjoin;
+package com.zozospider.hadoop.mapreduce.join.reducejoin;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -11,11 +11,11 @@ import java.io.IOException;
 /**
  * Mapper
  */
-public class MapJoinMapper extends Mapper<LongWritable, Text, IntWritable, MapJoinValueWritable> {
+public class ReduceJoinMapper extends Mapper<LongWritable, Text, IntWritable, ReduceJoinValueWritable> {
 
     private String splitName;
     private IntWritable keyOut = new IntWritable();
-    private MapJoinValueWritable valueOut = new MapJoinValueWritable();
+    private ReduceJoinValueWritable valueOut = new ReduceJoinValueWritable();
 
     @Override
     protected void setup(Context context) throws IOException, InterruptedException {
@@ -55,7 +55,7 @@ public class MapJoinMapper extends Mapper<LongWritable, Text, IntWritable, MapJo
             valueOut.setbName("");
 
             // key_out: 3
-            // value_out: MapJoinValueWritable{flag=fa, aId=1, aName=Frank, bId=3, bName=}
+            // value_out: ReduceJoinValueWritable{flag=fa, aId=1, aName=Frank, bId=3, bName=}
 
         } else if ("fb".equals(splitName)) {
 
@@ -70,7 +70,7 @@ public class MapJoinMapper extends Mapper<LongWritable, Text, IntWritable, MapJo
             valueOut.setbName(fields[1]);
 
             // key_out: 1
-            // value_out: MapJoinValueWritable{flag=fb, aId=0, aName=, bId=1, bName=New York}
+            // value_out: ReduceJoinValueWritable{flag=fb, aId=0, aName=, bId=1, bName=New York}
         }
 
         // 3 写出

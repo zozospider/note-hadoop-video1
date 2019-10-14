@@ -1,4 +1,4 @@
-package com.zozospider.hadoop.mapreduce.join.mapjoin;
+package com.zozospider.hadoop.mapreduce.join.reducejoin;
 
 import org.apache.hadoop.io.Writable;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * 实现 Writable 接口
  */
-public class MapJoinValueWritable implements Writable {
+public class ReduceJoinValueWritable implements Writable {
 
     private String flag;
     private int aId;
@@ -17,7 +17,7 @@ public class MapJoinValueWritable implements Writable {
     private int bId;
     private String bName;
 
-    public MapJoinValueWritable() {
+    public ReduceJoinValueWritable() {
         super();
     }
 
@@ -41,7 +41,7 @@ public class MapJoinValueWritable implements Writable {
 
     @Override
     public String toString() {
-        return "MapJoinValueWritable{" +
+        return "ReduceJoinValueWritable{" +
                 "flag='" + flag + '\'' +
                 ", aId=" + aId +
                 ", aName='" + aName + '\'' +
