@@ -75,7 +75,6 @@ public class ReduceJoinDriver {
         // 5 提交 Job
         boolean result = job.waitForCompletion(true);
         System.exit(result ? 0 : 1);
-
     }
 
 

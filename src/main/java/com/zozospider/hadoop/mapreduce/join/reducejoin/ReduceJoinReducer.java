@@ -67,13 +67,13 @@ public class ReduceJoinReducer extends Reducer<IntWritable, ReduceJoinValueWrita
 
         // fbValueIn: ReduceJoinValueWritable{flag=fb, aId=0, aName=, bId=3, bName=Chicago}
 
+        // 循环 faValueIns, 并从 fbValueIn 中获取 bId 对应的 bName, 输出拼装结果
+        // keyOut: aId: 1, aName: Frank, bId: 3, bName: Chicago
+        // keyOut: aId: 7, aName: David, bId: 3, bName: Chicago
         for (ReduceJoinValueWritable faValueIn : faValueIns) {
             keyOut.set("aId: " + faValueIn.getaId() + ", aName: " + faValueIn.getaName() + ", bId: " + faValueIn.getbId() + ", bName: " + fbValueIn.getbName());
             context.write(keyOut, NullWritable.get());
         }
-
-        // aId: 1, aName: Frank, bId: 3, bName: Chicago
-        // aId: 7, aName: David, bId: 3, bName: Chicago
     }
 
 }
