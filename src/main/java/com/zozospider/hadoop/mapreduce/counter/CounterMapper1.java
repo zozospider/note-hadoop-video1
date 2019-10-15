@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Mapper
  */
-public class CounterMapper extends Mapper<LongWritable, Text, Text, NullWritable> {
+public class CounterMapper1 extends Mapper<LongWritable, Text, Text, NullWritable> {
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
@@ -23,11 +23,14 @@ public class CounterMapper extends Mapper<LongWritable, Text, Text, NullWritable
         // 切割
         String[] fields = line.split(" ");
 
-        // 打印出统计的每 1 行字段数
-        context.getCounter("fields_length", "len-" + fields.length).increment(1);
-
-        // 写出
-        context.write(value, NullWritable.get());
+        // 只写出合法字段数, 并分别统计合法与不合法的累计行数
+        if (fields.length == 3) {
+            // 写出
+            context.write(value, NullWritable.get());
+            context.getCounter("fields_legal", "true").increment(1);
+        } else {
+            context.getCounter("fields_legal", "false").increment(1);
+        }
     }
 
 }
