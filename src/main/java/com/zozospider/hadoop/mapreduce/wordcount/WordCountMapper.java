@@ -23,11 +23,10 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        // org_text: abc abc love
         // key_in: 0
         // value_in: abc abc love
 
-        // 1 获取一行
+        // 1 获取 1 行
         String line = value.toString();
 
         // 2 切割
