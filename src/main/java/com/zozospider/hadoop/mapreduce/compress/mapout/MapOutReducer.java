@@ -1,4 +1,4 @@
-package com.zozospider.hadoop.mapreduce.wordcount;
+package com.zozospider.hadoop.mapreduce.compress.mapout;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -9,11 +9,7 @@ import java.io.IOException;
 /**
  * Reducer
  */
-// KEYIN: Reduce 阶段输入的 key (Map 阶段输出的 key)
-// KEYOUT: Reduce 阶段输入的 value (Map 阶段输出的 value)
-// KEYOUT: Reduce 阶段输出的 key
-// VALUEOUT: Reduce 阶段输出的 value
-public class WordCountReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+public class MapOutReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 
     IntWritable valueOut = new IntWritable();
 
