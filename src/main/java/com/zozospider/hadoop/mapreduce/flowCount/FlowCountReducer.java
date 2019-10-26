@@ -6,7 +6,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 import java.io.IOException;
 
 /**
- * Reduce 阶段
+ * Reducer
  */
 public class FlowCountReducer extends Reducer<Text, FlowCountValueWritable, Text, FlowCountValueWritable> {
 

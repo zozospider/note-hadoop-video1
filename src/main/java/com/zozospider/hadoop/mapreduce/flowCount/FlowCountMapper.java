@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 /**
- * Map 阶段
+ * Mapper
  */
 public class FlowCountMapper extends Mapper<LongWritable, Text, Text, FlowCountValueWritable> {
 
