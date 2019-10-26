@@ -10,7 +10,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import java.io.IOException;
 
 /**
- * MapReduce 驱动: 分区排序 (按 field0 首字母 2 个分区, 且每个分区按 (field1 + field2) 降序排列)
+ * MapReduce 驱动: 分区排序 (按 field0 首字母分成 2 个分区, 且每个分区按 (field1 + field2) 降序排列)
  */
 public class PartitionedDriver {
 
