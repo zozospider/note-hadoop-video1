@@ -10,7 +10,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import java.io.IOException;
 
 /**
- * MapReduce 驱动:
+ * MapReduce 驱动: 输出 Top8 (按 (field1 + field2) 倒叙排列)
  */
 public class TopN2Driver {
 
