@@ -29,7 +29,9 @@ public class TopN1KeyWritable implements WritableComparable<TopN1KeyWritable> {
 
     @Override
     public void readFields(DataInput in) throws IOException {
-
+        this.field1 = in.readInt();
+        this.field2 = in.readInt();
+        this.fieldSum = in.readInt();
     }
 
     @Override
