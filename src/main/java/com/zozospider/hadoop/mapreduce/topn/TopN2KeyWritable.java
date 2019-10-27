@@ -9,14 +9,14 @@ import java.io.IOException;
 /**
  * 实现 Writable 接口
  */
-public class TopN1KeyWritable implements WritableComparable<TopN1KeyWritable> {
+public class TopN2KeyWritable implements WritableComparable<TopN2KeyWritable> {
 
     private int field1;
     private int field2;
     // fieldSum = field1 + field2
     private int fieldSum;
 
-    public TopN1KeyWritable() {
+    public TopN2KeyWritable() {
         super();
     }
 
@@ -35,7 +35,7 @@ public class TopN1KeyWritable implements WritableComparable<TopN1KeyWritable> {
     }
 
     @Override
-    public int compareTo(TopN1KeyWritable o) {
+    public int compareTo(TopN2KeyWritable o) {
         // 按 fieldSum 倒叙排列
         if (fieldSum > o.getFieldSum()) {
             return -1;
@@ -47,7 +47,7 @@ public class TopN1KeyWritable implements WritableComparable<TopN1KeyWritable> {
 
     @Override
     public String toString() {
-        return "TopN1KeyWritable{" +
+        return "TopN2KeyWritable{" +
                 "field1=" + field1 +
                 ", field2=" + field2 +
                 ", fieldSum=" + fieldSum +
